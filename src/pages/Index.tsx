@@ -5,6 +5,8 @@ import Dashboard from '@/components/Dashboard';
 import OffersList from '@/components/OffersList';
 import ClientsList from '@/components/ClientsList';
 import Analytics from '@/components/Analytics';
+import CreateOffer from './CreateOffer';
+import Settings from './Settings';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -29,8 +31,10 @@ const Index = () => {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/offers" element={<OffersList />} />
+          <Route path="/offers/create" element={<CreateOffer />} />
           <Route path="/clients" element={<ClientsList />} />
           <Route path="/analytics" element={<Analytics />} />
+          <Route path="/settings" element={<Settings />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Layout>
